@@ -23,14 +23,21 @@ Make sure you see a message like this `[2021-03-15 05:54:32,019] INFO binding to
 5. Start kafka server `kafka-server-start.sh config/server.properties`
 
 ### Kafka Topics (CLI)
-Create topic
+Create topic:
 `kafka-topics --zookeeper 127.0.0.1:2181 --topic TopicName --create --partitions # --replication-factor #`
 
-Delete topic
+Delete topic:
 `kafka-topics --zookeeper 127.0.0.1:2181 --topic TopicName --delete`
 
-List topics
+List topics:
 `kafka-topics --zookeeper 127.0.0.1:2181 --list`
 
-Describe topic
+Describe topic:
 `kafka-topics --zookeeper 127.0.0.1:2181 --topic TopicName --describe`
+
+### Send data to topics: Kafka-console-producer
+
+Connect to kafka on port 9092. Brokers and topic arguments are required parameters. 
+`kafka-console-producer.sh --broker-list 127.0.0.1:9092 --topic first_topic` and you are ready to produce to first_topic
+
+If you write to a non existent topic `kafka-console-producer.sh --broker-list 127.0.01:9092 --topic new_topic` Kafka will create the topic with 1 partition and a replication factor of 1 (Default). This is not an ideal set up and you may change this by editing the config/server.properties file.
