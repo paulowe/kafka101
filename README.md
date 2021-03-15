@@ -12,4 +12,5 @@ Here you will find companion code and exercises from the Apache Kafka for beginn
 3. For this application, make sure you have Java8 installed on your system
    - Check Java version `java -version`. If not Java8 and OS == MacOS:
    - `brew tap homebrew/cask-versions`
-   - `brew cask install java8`
+   - `brew install --cask  homebrew/cask-versions/adoptopenjdk8`
+`
