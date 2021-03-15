@@ -14,7 +14,7 @@ Here you will find companion code and exercises from the Apache Kafka for beginn
    - `brew tap homebrew/cask-versions`
    - `brew install --cask  homebrew/cask-versions/adoptopenjdk8`
 
-## Start Zookeper server
+## Start Zookeeper server
 1. Navigate to where your Kafka binary folder is. Run `zookeper-server-start.sh config/zookeper.properties`
 Make sure you see a message like this `[2021-03-15 05:54:32,019] INFO binding to port 0.0.0.0/0.0.0.0:2181 (org.apache.zookeeper.server.NIOServerCnxnFactory)`
 2. Create directory for your zookeper directory. Use nano to edit config/zookeeper.properties and add the full path to your data directory. Restart your zookeeper server and check that your data directory contains a new file.
