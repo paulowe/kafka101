@@ -7,4 +7,4 @@
 Here you will find companion code and exercises from the Apache Kafka for beginners course I completed by Stephane Maarek's udemy class. I include my notes and architecture screenshots.
 
 ## Set up
-Make sure you have https://kafka.apache.org/downloads[Apache Kafka] downloaded
+Make sure you have (https://kafka.apache.org/downloads)[Apache Kafka] downloaded
