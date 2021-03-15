@@ -21,3 +21,16 @@ Make sure you see a message like this `[2021-03-15 05:54:32,019] INFO binding to
 ## Start Kafka server
 4. Similarly, create a directory for kafka logs. Use nano to edit config/server.properties file and add the full path to your directory.
 5. Start kafka server `kafka-server-start.sh config/server.properties`
+
+### Kafka Topics (CLI)
+Create topic
+`kafka-topics --zookeeper 127.0.0.1:2181 --topic TopicName --create --partitions # --replication-factor #`
+
+Delete topic
+`kafka-topics --zookeeper 127.0.0.1:2181 --topic TopicName --delete`
+
+List topics
+`kafka-topics --zookeeper 127.0.0.1:2181 --list`
+
+Describe topic
+`kafka-topics --zookeeper 127.0.0.1:2181 --topic TopicName --describe`
