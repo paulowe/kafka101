@@ -6,7 +6,7 @@
  ## About this repo
 Here you will find companion code and exercises from the Apache Kafka for beginners course I completed by Stephane Maarek's udemy class. I include my notes and architecture screenshots.
 
-## Development environment set-up
+## Development environment set-up (MacOS)
 1. Make sure you have [Apache Kafka](https://kafka.apache.org/downloads)  binary downloaded
 2. Add Kafka to your PATH by editing your .bash_profile or .zsh_profile. `export PATH='$PATH:/path/to/kafka_2.x.x/bin'`
 3. For this application, make sure you have Java8 installed on your system
