@@ -41,3 +41,25 @@ Connect to kafka on port 9092. Brokers and topic arguments are required paramete
 `kafka-console-producer.sh --broker-list 127.0.0.1:9092 --topic first_topic` and you are ready to produce to first_topic
 
 If you write to a non existent topic `kafka-console-producer.sh --broker-list 127.0.01:9092 --topic new_topic` Kafka will create the topic with 1 partition and a replication factor of 1 (Default). This is not an ideal set up and you may change this by editing the config/server.properties file.
+
+kafka producers with keys: `kafka-console-producer --broker-list 127.0.0.1:9092 --topic first_topic --property parse.key=true --property key.separator=,` > key, value
+
+### Kafka Consumers (CLI)
+`kafka-console-consumer.sh --bootstrap-server 127.0.0.1:9092 --topic TopicName` will only consume messages sent by kafka-producers from the point you run this consumer command.
+
+`kafka_2.12-2.7.0 % kafka-console-consumer.sh --bootstrap-server 127.0.0.1:9092 --topic TopicName --from-beginning` will consume messages from beginning.
+
+kafka consumers with keys: `kafka-console-consumer --bootstrap-server 127.0.0.1:9092 --topic first_topic --from-beginning --property print.key=true --property key.separator=,`
+
+### Kafka consumers in group mode
+`kafka-console-consumer.sh --bootstrap-server 127.0.0.1:9092 --topic first_topic --group application-group` creates a consumer that is part of the "application-group" group. If you launch more than one consumer and send messages to the topic you will realize that it automatically load balances between consumers.
+
+`kafka-consumer-groups --bootstrap-server localhost:9092 --list` displays information about all your consumer groups.
+
+`kafka-consumer-groups.sh --bootstrap-server localhost:9092 --describe --group application-group` describes a particular group
+
+`kafka-consumer-groups.sh --bootstrap-server localhost:9092  --group application-group --reset-offsets --to-earliest --execute --topic first_topic` resets offsets for a consumer group of a specific topic its to earliest message. If you restart your consumer after this command, you will stream all the data from the beginning again.
+
+
+
+
